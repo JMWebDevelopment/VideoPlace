@@ -124,6 +124,6 @@ RobotoSlab-Light.ttf: Font data copyright Google 2013
 RobotoSlab-Regular.ttf: Font data copyright Google 2013
 RobotoSlab-Bold.ttf: Font data copyright Google 2013
 
-I hope you all understand 
+Hope you all understand! Please contact if you don't understand anything. 
 
 Thanking You!
