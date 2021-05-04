@@ -33,7 +33,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 				</div>
 			<?php } elseif ( has_post_format( 'video' ) ) { ?>
 				<div class="video large-8 medium-12 small-12 columns">
-					<?php echo wp_rig()->hybrid_media_grabber( array( 'split_media' => true ) ); ?>
+					<?php echo wp_rig()->media_grabber( array( 'split_media' => true ) ); ?>
 					<?php if ( has_post_thumbnail() ) { ?>
 						<div class="videoplace-featured-image">
 							<?php the_post_thumbnail('videoplace-featured-image'); ?>
@@ -42,7 +42,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 				</div>
 			<?php } else { ?>
 				<div class="video large-8 medium-12 small-12 columns">
-					<?php echo wp_rig()->hybrid_media_grabber( array( 'split_media' => true ) ); ?>
+					<?php echo wp_rig()->media_grabber( array( 'split_media' => true ) ); ?>
 					<?php if ( has_post_thumbnail() ) { ?>
 						<div class="videoplace-featured-image">
 							<?php the_post_thumbnail('videoplace-featured-image'); ?>

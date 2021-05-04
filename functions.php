@@ -62,5 +62,8 @@ if ( file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
 // Load the `wp_rig()` entry point function.
 require get_template_directory() . '/inc/functions.php';
 
+// Load the media grabber class.
+require get_template_directory() . '/inc/class-media-grabber.php';
+
 // Initialize the theme.
 call_user_func( 'WP_Rig\WP_Rig\wp_rig' );
