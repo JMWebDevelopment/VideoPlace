@@ -65,6 +65,11 @@
 	border: 2px solid #000;
 	border-radius: 0;
 	background: transparent;
+
+	&:hover,
+	&:focus {
+		color: var(--color-grey);
+	}
 }
 
 .nav--toggle-small .menu {
