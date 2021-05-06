@@ -8,6 +8,7 @@
  */
 
 namespace WP_Rig\WP_Rig;
+
 use WP_Query;
 
 get_header();
@@ -18,6 +19,7 @@ if ( is_home() ) {
 } else {
 	wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 }
+wp_rig()->print_styles( 'wp-rig-sidebar' );
 
 ?>
 	<main id="primary" class="site-main">

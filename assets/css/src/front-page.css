@@ -23,6 +23,11 @@
 
 		& .columns {
 			padding-left: 0;
+
+			& .wp-block-cover__video-background {
+				max-width: 100%;
+			}
+
 			&.video {
 				position: relative;
 				padding: 0 15px 0 0;
@@ -122,6 +127,11 @@
 		& .home-posts {
 			padding-left: 0;
 			flex-basis: 66.67%;
+
+			& .wp-block-cover__video-background {
+				max-width: 100%;
+			}
+
 			& .video-post {
 				background-color: rgba(var(--color-grey-rgb), .30);
 				margin-bottom: 15px;
