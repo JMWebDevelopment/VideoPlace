@@ -142,12 +142,13 @@
 				}
 				& .photo-video {
 					position: relative;
-					img {
+
+					& img {
 						margin: 0 10px;
 						width: 100%;
 					}
+
 					& .videoplace-featured-image {
-						position: absolute;
 						top: 0;
 						bottom: 0;
 						right: 0;
@@ -155,6 +156,7 @@
 						margin: 0 -10px;
 						& img {
 							margin: 0;
+							position: relative;
 						}
 						&:hover {
 							cursor: pointer;

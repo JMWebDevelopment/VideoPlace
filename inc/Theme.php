@@ -153,6 +153,7 @@ class Theme {
 			new Customizer\Component(),
 			new Styles\Component(),
 			new Media_Grabber\Component(),
+			new VideoPlace_Tags\Component(),
 		];
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

@@ -52,7 +52,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function template_tags(): array {
 		return [
 			'social_links'  => [ $this, 'social_links' ],
-			'related_posts' => [ $this, 'related_posts' ]
+			'related_posts' => [ $this, 'related_posts' ],
+			'page_navi'     => [ $this, 'page_navi' ],
 		];
 	}
 
@@ -149,5 +150,66 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$title = __( 'Page ', 'videoplace' ) . $page;
 		}
 		return $title;
+	}
+
+	public function page_navi( $custom_wp_query, $before = '', $after = '' ) {
+		global $wpdb;
+		$request        = $custom_wp_query->request;
+		$posts_per_page = intval( get_query_var( 'posts_per_page' ) );
+		$paged          = intval( get_query_var( 'paged' ) );
+		$numposts       = $custom_wp_query->found_posts;
+		$max_page       = $custom_wp_query->max_num_pages;
+		if ( $numposts <= $posts_per_page ) {
+			return;
+		}
+		if ( empty( $paged ) || 0 === $paged ) {
+			$paged = 1;
+		}
+		$pages_to_show         = 7;
+		$pages_to_show_minus_1 = $pages_to_show - 1;
+		$half_page_start       = floor( $pages_to_show_minus_1 / 2 );
+		$half_page_end         = ceil( $pages_to_show_minus_1 / 2 );
+		$start_page            = $paged - $half_page_start;
+		if ( $start_page <= 0 ) {
+			$start_page = 1;
+		}
+		$end_page = $paged + $half_page_end;
+		if ( ( $end_page - $start_page ) !== $pages_to_show_minus_1 ) {
+			$end_page = $start_page + $pages_to_show_minus_1;
+		}
+		if ( $end_page > $max_page ) {
+			$start_page = $max_page - $pages_to_show_minus_1;
+			$end_page   = $max_page;
+		}
+		if ( $start_page <= 0 ) {
+			$start_page = 1;
+		}
+		echo $before . '<nav class="page-navigation"><ul class="pagination">';
+		if ( $start_page >= 2 && $pages_to_show < $max_page ) {
+			$first_page_text = __( 'First', 'wp-rig' );
+			echo '<li><a href="' . get_pagenum_link() . '" title="' . $first_page_text . '">' . $first_page_text . '</a></li>';
+		}
+		if ( get_previous_posts_link() ) {
+			echo '<li>';
+			previous_posts_link( __( '&laquo;&laquo; Previous', 'wp-rig' ), $max_page );
+			echo '</li>';
+		}
+		for ( $i = $start_page; $i <= $end_page; $i++ ) {
+			if ( $i === $paged ) {
+				echo '<li class="current"> ' . $i . ' </li>';
+			} else {
+				echo '<li><a href="' . get_pagenum_link( $i ) . '">' . $i . '</a></li>';
+			}
+		}
+		if ( get_next_posts_link() ) {
+			echo '<li>';
+			next_posts_link( __( 'Next &#187;&#187;', 'wp-rig' ), $max_page );
+			echo '</li>';
+		}
+		if ( $end_page < $max_page ) {
+			$last_page_text = __( 'Last', 'wp-rig' );
+			echo '<li><a href="' . get_pagenum_link( $max_page ) . '" title="' . $last_page_text . '">' . $last_page_text . '</a></li>';
+		}
+		echo '</ul></nav>' . $after;
 	}
 }
