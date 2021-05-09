@@ -156,7 +156,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		global $wpdb;
 		$request        = $custom_wp_query->request;
 		$posts_per_page = intval( get_query_var( 'posts_per_page' ) );
-		$paged          = intval( get_query_var( 'paged' ) );
+		$paged          = intval( get_query_var( 'page' ) );
 		$numposts       = $custom_wp_query->found_posts;
 		$max_page       = $custom_wp_query->max_num_pages;
 		if ( $numposts <= $posts_per_page ) {

@@ -16,6 +16,7 @@ get_header();
 wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 wp_rig()->print_styles( 'wp-rig-sidebar' );
 
+$current_page = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1
 ?>
 	<main id="primary" class="site-main">
 		<div class="row" id="top-post">
@@ -25,7 +26,7 @@ wp_rig()->print_styles( 'wp-rig-sidebar' );
 		<div id="inner-content" class="row home-posts-section">
 
 			<div class="home-posts large-8 medium-12 small-12 columns">
-				<?php get_template_part( 'template-parts/front-page/home', 'posts' ); ?>
+				<?php get_template_part( 'template-parts/front-page/home', 'posts', [ 'paged' => $current_page ] ); ?>
 			</div>
 
 			<?php get_sidebar(); ?>

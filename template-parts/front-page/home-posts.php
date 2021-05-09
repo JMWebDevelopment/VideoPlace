@@ -9,13 +9,12 @@ namespace WP_Rig\WP_Rig;
 
 use WP_Query;
 
-$current_page = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$home_args    = [
+$home_args  = [
 	'posts_per_page' => get_option( 'post_per_page' ),
-	'paged'          => $current_page,
+	'paged'          => $args['paged'],
 	'post__not_in'   => $do_not_duplicate,
 ];
-$home_posts   = new WP_Query( $home_args );
+$home_posts = new WP_Query( $home_args );
 
 if ( $home_posts->have_posts() ) :
 	while ( $home_posts->have_posts() ) :

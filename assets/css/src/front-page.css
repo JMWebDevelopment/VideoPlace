@@ -149,17 +149,10 @@
 					}
 
 					& .videoplace-featured-image {
-						top: 0;
-						bottom: 0;
-						right: 0;
-						left: 0;
-						margin: 0 -10px;
+						position: relative;
+
 						& img {
 							margin: 0;
-							position: relative;
-						}
-						&:hover {
-							cursor: pointer;
 						}
 					}
 				}
