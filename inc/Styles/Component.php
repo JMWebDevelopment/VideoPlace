@@ -301,8 +301,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return wp_rig()->is_primary_sidebar_active();
 				},
 			],
+			'wp-rig-single'     => [
+				'file'             => 'single.min.css',
+				'preload_callback' => function() {
+					return is_single();
+				},
+			],
 			'wp-rig-front-page' => [
-				'file' => 'front-page.min.css',
+				'file'             => 'front-page.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'front-page.php' === basename( $template );
