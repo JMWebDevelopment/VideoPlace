@@ -13,6 +13,7 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
 wp_rig()->print_styles( 'wp-rig-single' );
+wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
 
 ?>
 	<main id="primary" class="site-main">
@@ -32,7 +33,7 @@ wp_rig()->print_styles( 'wp-rig-single' );
 
 				</div> <!-- end article -->
 
-				<div class="row">
+				<div class="row bottom-row">
 
 					<?php get_template_part( 'template-parts/post/bottom' ); ?>
 

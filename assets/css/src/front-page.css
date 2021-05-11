@@ -3,7 +3,7 @@
 
 @media (--small-up) {
 	#top-post {
-		background-color: rgba(var(--color-grey-rgb), .30);
+		background-color: rgba(var(--color-grey-rgb), 0.3);
 		max-width: 75rem;
 		width: 100%;
 		margin: 15px auto 0;

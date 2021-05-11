@@ -13,6 +13,7 @@ use function add_action;
 use function add_filter;
 use function get_theme_mod;
 use function esc_attr;
+use function WP_Rig\WP_Rig\wp_rig;
 
 /**
  * Class for managing sidebars.
@@ -101,9 +102,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									}
 								} ?>
 							<?php } elseif ( has_post_format( 'video' ) ) { ?>
-								<?php echo hybrid_media_grabber( array( 'split_media' => true ) ); ?>
+								<?php echo wp_rig()->media_grabber( array( 'split_media' => true ) ); ?>
 							<?php } else { ?>
-								<?php echo hybrid_media_grabber( array( 'split_media' => true ) ); ?>
+								<?php echo wp_rig()->media_grabber( array( 'split_media' => true ) ); ?>
 							<?php } ?>
 						</div>
 						<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

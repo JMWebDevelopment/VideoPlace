@@ -13,8 +13,6 @@ if ( ! wp_rig()->is_primary_sidebar_active() ) {
 	return;
 }
 
-wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
-
 ?>
 <aside id="secondary" class="primary-sidebar widget-area">
 	<?php wp_rig()->display_primary_sidebar(); ?>
