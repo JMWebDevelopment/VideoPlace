@@ -9,10 +9,11 @@
 		padding: 10px 5px;
 		margin-bottom: 15px;
 
-		& .widgettitle {
+		& .widget-title {
 			@mixin roboto 26px, 300, var(--color-white), uppercase;
 			text-align: center;
 			border-bottom: 1px solid var(--color-white);
+			margin-top: 0;
 		}
 
 		& a {
