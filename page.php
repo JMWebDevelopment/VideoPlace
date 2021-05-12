@@ -12,37 +12,34 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-page' );
+wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
 
 ?>
-	<main id="primary" class="site-main">
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<div class="page-container">
+		<main id="primary" class="site-main">
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+					?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'page-post' ); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
+					<div id="post-<?php the_ID(); ?>" <?php post_class( 'page-post' ); ?> role="article">
 
-				<?php if ( hybrid_media_grabber() ) { ?>
-					<header class="article-header">
-						<?php echo hybrid_media_grabber(); ?>
-						<?php if ( has_post_thumbnail() ) { ?>
-							<div class="videoplace-featured-image">
-								<?php the_post_thumbnail('videoplace-featured-image'); ?>
-							</div>
-						<? } ?>
-					</header> <!-- end article header -->
-				<?php } ?>
+						<?php get_template_part( 'template-parts/page/top' ); ?>
 
-				<section class="entry-content" itemprop="articleBody">
-					<h1 class="page-title"><?php the_title(); ?></h1>
-					<?php the_content(); ?>
-					<?php wp_link_pages(); ?>
-				</section> <!-- end article section -->
+						<?php get_template_part( 'template-parts/page/bottom' ); ?>
 
-				<?php comments_template(); ?>
+					</div> <!-- end article -->
 
-			</article> <!-- end article -->
+					<?php
+				endwhile;
+			endif;
+			?>
 
-		<?php endwhile; endif; ?>
+		</main><!-- #primary -->
 
-	</main><!-- #primary -->
+		<?php get_sidebar(); ?>
+	</div>
 <?php
-get_sidebar();
 get_footer();
