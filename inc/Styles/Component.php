@@ -307,6 +307,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return is_single();
 				},
 			],
+			'wp-rig-archive'     => [
+				'file'             => 'archive.min.css',
+				'preload_callback' => function() {
+					return is_archive() || is_search();
+				},
+			],
 			'wp-rig-front-page' => [
 				'file'             => 'front-page.min.css',
 				'preload_callback' => function() {
