@@ -3,7 +3,8 @@
 
 @media (--small-up) {
 
-	.page {
+	.page,
+	.error404 {
 
 		& .page-container {
 			display: flex;
@@ -93,6 +94,24 @@
 			border: 0;
 		}
 	}
+
+	.content-not-found {
+		background-color: rgba($grey, 0.3);
+		padding: 10px 15px;
+
+		& h1 {
+			@mixin roboto 150px, 300, var(--color-white), uppercase;
+			margin-bottom: 15px;
+		}
+
+		& h3 {
+		  	@mixin robotoSlab 40px, 400, var(--color-white), none;
+		}
+
+		& p {
+		  	@mixin playfair 18px, 400, var(--color-white), none;
+		}
+	}
 }
 @media (--small-only) {  }
 @media (--small-down) {  }
@@ -101,7 +120,8 @@
 @media (--medium-only) {  }
 @media (--medium-down) {
 
-	.page {
+	.page,
+	.error404 {
 
 		& .page-container {
 
@@ -112,6 +132,20 @@
 			& .primary-sidebar {
 				width: 100%;
 			}
+		}
+	}
+
+	.content-not-found {
+		background-color: rgba($grey, 0.3);
+		padding: 10px 15px;
+
+		& h1 {
+			font-size: 35px;
+			margin-bottom: 15px;
+		}
+
+		& h3 {
+			font-size: 24px;
 		}
 	}
 }
