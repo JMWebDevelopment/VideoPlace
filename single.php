@@ -14,6 +14,7 @@ get_header();
 wp_rig()->print_styles( 'wp-rig-content' );
 wp_rig()->print_styles( 'wp-rig-single' );
 wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
+wp_rig()->load_light_styles();
 
 ?>
 	<main id="primary" class="site-main">

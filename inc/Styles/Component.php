@@ -326,6 +326,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page.php' === basename( $template ) || is_404();
 				},
 			],
+			'wp-rig-light'     => [
+				'file'             => 'light.min.css',
+				'preload_callback' => function() {
+					return 'light' === get_theme_mod( 'videoplace-color-scheme' );
+				},
+			],
 		];
 
 		/**

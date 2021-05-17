@@ -52,9 +52,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function template_tags(): array {
 		return [
-			'social_links'  => [ $this, 'social_links' ],
-			'related_posts' => [ $this, 'related_posts' ],
-			'page_navi'     => [ $this, 'page_navi' ],
+			'social_links'      => [ $this, 'social_links' ],
+			'related_posts'     => [ $this, 'related_posts' ],
+			'page_navi'         => [ $this, 'page_navi' ],
+			'load_light_styles' => [ $this, 'load_light_styles' ],
 		];
 	}
 
@@ -212,5 +213,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			echo '<li><a href="' . get_pagenum_link( $max_page ) . '" title="' . $last_page_text . '">' . $last_page_text . '</a></li>';
 		}
 		echo '</ul></nav>' . $after;
+	}
+
+	public function load_light_styles() {
+		if ( 'light' === get_theme_mod( 'videoplace-color-scheme' ) ) {
+			wp_rig()->print_styles( 'wp-rig-light' );
+		}
 	}
 }

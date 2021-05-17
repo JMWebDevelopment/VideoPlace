@@ -27,13 +27,15 @@
 	--color-custom-daylight: #97c0b7;
 	--color-custom-sun: #eee9d1;
 
-	--color-black: #000000;
+	--color-black: #000;
 	--color-off-black: #262626;
-	--color-grey: #D8D8D8;
+	--color-grey: #d8d8d8;
 	--color-grey-rgb: 216, 216, 216;
-	--color-dark-grey: #6E6E6E;
+	--color-dark-grey: #6e6e6e;
 	--color-dark-grey-rgb: 110, 110, 110;
-	--color-white: #FFFFFF;
+	--color-light-grey: #b8b8b8;
+	--color-off-white: #ddd;
+	--color-white: #fff;
 
 	--color-link: #D8D8D8;
 	--color-link-visited: #D8D8D8;

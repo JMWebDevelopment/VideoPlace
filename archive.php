@@ -14,6 +14,7 @@ get_header();
 wp_rig()->print_styles( 'wp-rig-content' );
 wp_rig()->print_styles( 'wp-rig-archive' );
 wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
+wp_rig()->load_light_styles();
 
 global $wp_query;
 
