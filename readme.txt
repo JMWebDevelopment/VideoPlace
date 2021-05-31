@@ -1,9 +1,12 @@
-=== VideoPlace Wordpress Theme ===
-Contributers: Jacob Martella
+=== VideoPlace ===
+Contributors: Jacob Martella
 Tags: black, dark, two-columns, right-sidebar, responsive-layout, fluid-layout, custom-background, custom-header, editor-style, featured-images, sticky-posts, theme-options, translation-ready, threaded-comments
-Requires at least: 4.3
-Tested up to: 4.8
-Stable tag: 1.3
+Requires at least: 4.8
+Tested up to: 5.7.2
+Requires PHP: 7.0
+Stable tag: 2.0
+License: GNU General Public License v3.0 (or later)
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 YouTube is a great place to upload your videos, but a not-so-great place if you want a customizable vlog. VideoPlace provides you with just that. This theme allows you the flexibility of being able to customize the look of your vlog, while keeping the look and feel of you videos similar to that of YouTube. Happy vlogging!
@@ -76,9 +79,13 @@ When customizing a theme, the best practice is to create a child theme. This way
 	add_action( 'wp_enqueue_scripts', 'videoplace_child_theme_styles', 10 ); ?>
 
 == Support ==
-If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at jacob.martella@att.net or fill out the form on the theme page (https://jacobmartella.com/videoplace-wordpress-theme).
+If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at me@jacobmartella.com or fill out the form on the theme page (https://jacobmartella.com/wordpress/wordpress-themes/videoplace-wordpress-theme).
 
 == Changelog ==
+= 2.0 =
+- Redeveloped the theme using WP Rig as a starter theme.
+- Tested with WordPress 5.7.2.
+
 = 1.3 =
 - Added support to show a featured photo over the video on page load if the user wants to.
 - Updated Foundation.
@@ -123,3 +130,4 @@ Roboto-Bold.ttf: Copyright 2011 Google Inc. All Rights Reserved.
 RobotoSlab-Light.ttf: Font data copyright Google 2013
 RobotoSlab-Regular.ttf: Font data copyright Google 2013
 RobotoSlab-Bold.ttf: Font data copyright Google 2013
+Font Awesome: SIL OFL 1.1 (Font), MIT License (Code)

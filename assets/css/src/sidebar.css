@@ -1,0 +1,188 @@
+@import "_custom-properties.css";
+@import "_custom_mixins.css";
+
+.primary-sidebar {
+	padding-right: 0;
+
+	& .widget {
+		background-color: rgba(var(--color-grey-rgb), 0.3);
+		padding: 10px 5px;
+		margin-bottom: 15px;
+
+		& .widget-title {
+			@mixin roboto 26px, 300, var(--color-white), uppercase;
+			text-align: center;
+			border-bottom: 1px solid var(--color-white);
+			margin-top: 0;
+		}
+
+		& a {
+			color: $grey;
+		}
+
+		& ul {
+			margin-left: 0;
+		}
+	}
+
+	& .tagcloud {
+
+		& a {
+			@mixin roboto 16px !important, 300, var(--color-white), uppercase;
+			margin: 1px;
+			padding: 5px;
+			display: inline-block;
+			border: 1px solid var(--color-white);
+			border-radius: 2px;
+
+			&:hover {
+				background-color: var(--color-white);
+				color: var(--color-black);
+				display: inline-block;
+			}
+		}
+	}
+
+	& #wp-calendar {
+		width: 100%;
+		background-color: transparent;
+		margin-bottom: 0;
+		border: 0;
+
+		& caption {
+			text-align: center;
+			margin-top: 0;
+			margin-bottom: 3px;
+			@mixin robotoSlab 26px, 400, var(--color-white), uppercase;
+		}
+
+		& thead {
+			@mixin robotoSlab 20px, 300, var(--color-white), uppercase;
+			background: transparent;
+			border: 0;
+
+			& tr {
+				background-color: transparent !important;
+				color: var(--color-white);
+				border: 0;
+			}
+
+			& th {
+				@mixin robotoSlab 20px, 300, var(--color-white), uppercase;
+				padding-bottom: 5px;
+				text-align: center;
+				background-color: transparent !important;
+				color: $white;
+				border-right: 0;
+			}
+		}
+
+		& tbody {
+			@mixin roboto 20px, 300, var(--color-white), uppercase;
+			background-color: transparent;
+			border: 0;
+
+			& tr {
+				@mixin roboto 20px, 300, var(--color-white), uppercase;
+				background-color: transparent !important;
+				border: 0;
+
+				& a {
+					color: $white !important;
+					cursor: pointer;
+				}
+			}
+
+			& td {
+				text-align: center;
+				padding: 8px;
+				border: 0;
+				border-radius: 2px;
+				background-color: transparent;
+				color: var(--color-white);
+				cursor: pointer;
+
+				&:hover,
+				&:hover,
+				&:hover > a{
+					color: #aaa;
+				}
+			}
+
+			& #today {
+				background-color: var(--color-black) !important;
+				color: $off-black;
+
+				& a {
+					color: var(--color-off-black) !important;
+					cursor: pointer;
+
+					&:hover {
+						color: var(--color-white) !important;
+					}
+				}
+
+				&:hover {
+					background-color: transparent !important;
+					color: var(--color-white);
+				}
+
+				&:hover > a {
+					color: var(--color-white) !important;
+				}
+			}
+
+			& .pad {
+				background: none;
+			}
+		}
+
+		& tfoot {
+			background-color: transparent;
+			color: var(--color-white);
+			border: 0;
+
+			& td {
+				border: 0;
+
+				&:hover,
+				& a:hover,
+				&:hover > a {
+					background-color: transparent;
+					color: #aaa;
+				}
+			}
+
+			& tr {
+				background-color: transparent !important;
+				color: var(--color-white);
+				border-top: 0;
+			}
+
+			& a {
+				color: var(--color-white);
+				cursor: pointer;
+			}
+
+			& #next,
+			& #prev {
+				@mixin robotoSlab 20px, 300, var(--color-white), uppercase;
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media (--small-only) {
+
+	.primary-sidebar {
+		padding-right: 0.625rem;
+	}
+}
+
+@media (--medium-only) {
+
+	.primary-sidebar {
+		padding-right: 0.9375rem;
+	}
+}

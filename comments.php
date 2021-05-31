@@ -1,71 +1,67 @@
 <?php
 /**
- * Comments.php
+ * The template for displaying comments
  *
- * @package VideoPlace
- * @author  Jacob Martella
- * @version  1.3
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package wp_rig
  */
+
+namespace WP_Rig\WP_Rig;
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+
+wp_rig()->print_styles( 'wp-rig-comments' );
+
 ?>
-<?php
-	if ( post_password_required() ) {
-		return;
-	}
-?>
-<?php if (comments_open()) { ?>
 <div id="comments" class="comments-area">
-
-	<?php // You can start editing here ?>
-
-	<?php if ( have_comments() ) : ?>
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) {
+		?>
 		<h2 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'videoplace' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wp-rig' ),
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
+			} else {
+				printf(
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'wp-rig' ) ),
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				);
+			}
 			?>
-		</h2>
+		</h2><!-- .comments-title -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'videoplace' ); ?></h2>
-			<div class="nav-links">
+		<?php the_comments_navigation(); ?>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'videoplace' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'videoplace' ) ); ?></div>
+		<?php wp_rig()->the_comments(); ?>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php
+		if ( ! comments_open() ) {
+			?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wp-rig' ); ?></p>
+			<?php
+		}
+	}
 
-		<ol class="commentlist">
-			<?php wp_list_comments( 'type=comment&callback=videoplace_comments' ); ?>
-		</ol>
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'videoplace' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'videoplace' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'videoplace' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php endif; // Check for comment navigation. ?>
-
-	<?php endif; // Check for have_comments(). ?>
-
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'videoplace' ) ) :
+	comment_form();
 	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'videoplace' ); ?></p>
-	<?php endif; ?>
-
-	<?php comment_form(array('class_submit'=>'button')); ?>
-
 </div><!-- #comments -->
-<?php } ?>

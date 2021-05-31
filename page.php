@@ -1,53 +1,46 @@
 <?php
 /**
- * Page.php
+ * The template for displaying all pages
  *
- * @package VideoPlace
- * @author  Jacob Martella
- * @version  1.3
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package wp_rig
  */
+
+namespace WP_Rig\WP_Rig;
+
+get_header();
+
+wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-page' );
+wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
+wp_rig()->load_light_styles();
+
 ?>
-<?php get_header(); ?>
-	
-	<div id="content">
-	
-		<div id="inner-content" class="row">
-	
-		    <main id="main" class="large-8 medium-12 small-12 columns" role="main">
-				
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<div class="page-container">
+		<main id="primary" class="site-main">
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+					?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'page-post' ); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
+					<div id="post-<?php the_ID(); ?>" <?php post_class( 'page-post' ); ?> role="article">
 
-						<?php if ( hybrid_media_grabber() ) { ?>
-							<header class="article-header">
-								<?php echo hybrid_media_grabber(); ?>
-                                <?php if ( has_post_thumbnail() ) { ?>
-                                    <div class="videoplace-featured-image">
-                                        <?php the_post_thumbnail('videoplace-featured-image'); ?>
-                                    </div>
-                                <? } ?>
-							</header> <!-- end article header -->
-						<?php } ?>
+						<?php get_template_part( 'template-parts/page/top' ); ?>
 
-						<section class="entry-content" itemprop="articleBody">
-							<h1 class="page-title"><?php the_title(); ?></h1>
-							<?php the_content(); ?>
-							<?php wp_link_pages(); ?>
-						</section> <!-- end article section -->
+						<?php get_template_part( 'template-parts/page/bottom' ); ?>
 
-						<?php comments_template(); ?>
+					</div> <!-- end article -->
 
-					</article> <!-- end article -->
-			    
-			    <?php endwhile; endif; ?>							
-			    					
-			</main> <!-- end #main -->
+					<?php
+				endwhile;
+			endif;
+			?>
 
-		    <?php get_sidebar(); ?>
-		    
-		</div> <!-- end #inner-content -->
+		</main><!-- #primary -->
 
-	</div> <!-- end #content -->
-
-<?php get_footer(); ?>
+		<?php get_sidebar(); ?>
+	</div>
+<?php
+get_footer();

@@ -1,43 +1,44 @@
 <?php
 /**
- * 404.php
+ * The template for displaying 404 pages (not found)
  *
- * @package VideoPlace
- * @author  Jacob Martella
- * @version  1.3
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package wp_rig
  */
+
+namespace WP_Rig\WP_Rig;
+
+get_header();
+
+wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-page' );
+wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
+wp_rig()->load_light_styles();
+
 ?>
-<?php get_header(); ?>
-			
-	<div id="content">
+	<div class="page-container">
+		<main id="primary" class="site-main">
+			<div id="post-<?php the_ID(); ?>" <?php post_class( 'page-post' ); ?> role="article">
 
-		<div id="inner-content" class="row">
-	
-			<main id="main" class="large-8 medium-12 small-12 columns" role="main">
+				<header class="article-header">
+					<h1><?php esc_html_e( '404', 'wp-rig' ); ?></h1>
+				</header> <!-- end article header -->
 
-				<article id="content-not-found">
-				
-					<header class="article-header">
-						<h1><?php _e( '404', 'videoplace' ); ?></h1>
-					</header> <!-- end article header -->
-			
-					<section class="entry-content">
-						<h3><?php _e( 'Whoops! Content not found!', 'videoplace' ); ?></h3>
-						<p><?php _e( 'We\'re terribly sorry, but we couldn\'t find what you were looking for. It might have been removed. We suggesting going to the home page or using the search form to look through our content. In the meantime, here\'s one of our amazing videos!', 'videoplace' ); ?></p>
-					</section> <!-- end article section -->
+				<section class="entry-content">
+					<h3><?php esc_html_e( 'Whoops! Content not found!', 'wp-rig' ); ?></h3>
+					<p><?php esc_html_e( 'We\'re terribly sorry, but we couldn\'t find what you were looking for. It might have been removed. We suggesting going to the home page or using the search form to look through our content. In the meantime, here\'s one of our amazing videos!', 'wp-rig' ); ?></p>
+				</section> <!-- end article section -->
 
-					<section class="search">
-					    <p><?php get_search_form(); ?></p>
-					</section> <!-- end search section -->
-			
-				</article> <!-- end article -->
-	
-			</main> <!-- end #main -->
+				<section class="search">
+					<p><?php get_search_form(); ?></p>
+				</section> <!-- end search section -->
 
-			<?php get_sidebar(); ?>
+			</div>
 
-		</div> <!-- end #inner-content -->
+		</main><!-- #primary -->
 
-	</div> <!-- end #content -->
-
-<?php get_footer(); ?>
+		<?php get_sidebar(); ?>
+	</div>
+<?php
+get_footer();

@@ -1,0 +1,21 @@
+{
+  "theme": {
+    "slug": "videoplace",
+    "name": "VideoPlace",
+    "author": "Jacob Martella",
+    "PHPNamespace": "JM_Web_Development\\VideoPlace"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "wordpressdev.dev.cc:3000",
+      "bypassPort": "3000",
+      "https": false
+    },
+    "styles": {
+      "autoprefixer": {
+        "grid": true
+      }
+    }
+  }
+}

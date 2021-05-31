@@ -1,41 +1,24 @@
 <?php
 /**
- * Footer.php
+ * The template for displaying the footer
  *
- * @package VideoPlace
- * @author  Jacob Martella
- * @version  1.3
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp_rig
  */
+
+namespace WP_Rig\WP_Rig;
+
 ?>
-					<footer class="footer" role="contentinfo">
-						<div id="inner-footer" class="row">
-							<div class="footer-info footer-column large-4 medium-4 small-12 columns">
-								<?php if ( function_exists( 'the_custom_logo' ) ) {
-									the_custom_logo();
-								} ?>
-								<h3 class="footer-text">&copy; <?php echo date( 'Y' ); ?> <?php echo get_bloginfo( 'name' ); ?><br />
-								<?php _e( 'VideoPlace Theme', 'videoplace' ); ?><br />
-								<?php wp_loginout(); ?></h3>
-							</div>
-							<div class="footer-column large-4 medium-4 small-12 columns">
-								<?php if ( is_active_sidebar( 'footer-center' ) ) : ?>
 
-									<?php dynamic_sidebar( 'footer-center' ); ?>
+	<footer id="colophon" class="site-footer">
+		<?php get_template_part( 'template-parts/footer/info' ); ?>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
 
-								<?php endif; ?>
-							</div>
-							<div class="footer-column large-4 medium-4 small-12 columns">
-								<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
+<?php wp_footer(); ?>
 
-									<?php dynamic_sidebar( 'footer-right' ); ?>
-
-								<?php endif; ?>
-							</div>
-						</div> <!-- end #inner-footer -->
-					</footer> <!-- end .footer -->
-				</div>  <!-- end .main-content -->
-			</div> <!-- end .off-canvas-wrapper-inner -->
-		</div> <!-- end .off-canvas-wrapper -->
-		<?php wp_footer(); ?>
-	</body>
-</html> <!-- end page -->
+</body>
+</html>

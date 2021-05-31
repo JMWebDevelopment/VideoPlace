@@ -1,0 +1,21 @@
+@define-mixin roboto $fontSize, $fontWeight, $color, $text-transform: none {
+	font-family: 'Roboto', sans-serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $color;
+	text-transform: $text-transform;
+}
+@define-mixin robotoSlab $fontSize, $fontWeight, $color, $text-transform: none {
+	font-family: 'Roboto Slab', serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $color;
+	text-transform: $text-transform;
+}
+@define-mixin playfair $fontSize, $fontWeight, $color, $text-transform: none {
+	font-family: 'Playfair Display', serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	color: $color;
+	text-transform: $text-transform;
+}
