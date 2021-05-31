@@ -19,6 +19,10 @@
 		& a {
 			color: $grey;
 		}
+
+		& ul {
+			margin-left: 0;
+		}
 	}
 
 	& .tagcloud {

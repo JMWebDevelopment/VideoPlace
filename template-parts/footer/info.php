@@ -14,9 +14,10 @@ namespace WP_Rig\WP_Rig;
 		<?php if ( function_exists( 'the_custom_logo' ) ) {
 			the_custom_logo();
 		} ?>
-		<h3 class="footer-text">&copy; <?php echo date( 'Y' ); ?> <?php echo get_bloginfo( 'name' ); ?><br />
-			<?php _e( 'VideoPlace Theme', 'videoplace' ); ?><br />
-			<?php wp_loginout(); ?></h3>
+		<p class="footer-text">&copy; <?php echo date( 'Y' ); ?> <?php echo get_bloginfo( 'name' ); ?><br />
+			<?php _e( 'VideoPlace Theme', 'wp-rig' ); ?><br />
+			<?php wp_loginout(); ?></p>
+		<?php echo wp_rig()->social_links(); ?>
 	</div>
 	<div class="footer-column large-4 medium-4 small-12 columns">
 		<?php if ( is_active_sidebar( 'footer-center' ) ) : ?>

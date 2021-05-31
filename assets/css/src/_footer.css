@@ -34,12 +34,30 @@
 				height: auto;
 				margin-bottom: 10px;
 			}
-			& h3 {
-				font-size: 20px;
+			& p {
+				@mixin roboto 24px, var(--color-white), 400, none;
+
 				& a {
 					color: var(--color-white);
 					&:hover {
 						color: var(--color-dark-grey);
+					}
+				}
+			}
+
+			& .social-links {
+
+				& a {
+					display: inline-block;
+					margin-right: 15px;
+
+					&:hover,
+					&:focus {
+						color: var(--color-light-grey);
+					}
+
+					&:last-child {
+						margin-right: 0;
 					}
 				}
 			}

@@ -50,11 +50,24 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		];
 	}
 
+	/**
+	 * Loads the runs the media grabber.
+	 *
+	 * @since 2.0
+	 *
+	 * @param array $args                The arguments for the media grabber.
+	 * @return Hybrid_Media_Grabber      The Hybrid_Media_Grabber object.
+	 */
 	public function media_grabber( $args = array() ) {
 		$media = new Hybrid_Media_Grabber( $args );
 		return $media->get_media();
 	}
 
+	/**
+	 * Loads the script for adding the flex-video class to videos.
+	 *
+	 * @since 2.0
+	 */
 	public function action_enqueue_fex_video_script() {
 		wp_enqueue_script(
 			'wp-rig-flex-video',

@@ -15,6 +15,7 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-front-page' );
 wp_rig()->print_styles( 'wp-rig-sidebar' );
+wp_rig()->load_light_styles();
 
 $current_page = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1
 ?>

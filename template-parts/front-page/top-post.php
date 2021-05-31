@@ -27,7 +27,7 @@ if ( $top_post->have_posts() ) :
 		$top_post->the_post();
 		$do_not_duplicate[] = $post->ID;
 		?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="top-post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php
 			if ( has_post_format( 'image' ) ) {
 				?>

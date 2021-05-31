@@ -59,19 +59,30 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		];
 	}
 
+	/**
+	 * Returns the HTML for the social media links section.
+	 *
+	 * @since 2.0
+	 *
+	 * @return string      HTML for the social media links section.
+	 */
 	public function social_links() {
 		$html = '<div class="social-links">';
-		if ( esc_attr( get_theme_mod( 'videoplace-facebook' ) ) ) { $html .= '<div class="social-link facebook"><a href="' . esc_url( get_theme_mod( 'videoplace-facebook' ) ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/facebook.png" /></a></div>'; }
-		if ( esc_attr( get_theme_mod( 'videoplace-twitter' ) ) ) { $html .= '<div class="social-link twitter"><a href="' . esc_url( get_theme_mod( 'videoplace-twitter' ) ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/twitter.png" /></a></div>'; }
-		if ( esc_attr( get_theme_mod( 'videoplace-google-plus' ) ) ) { $html .= '<div class="social-link google-plus"><a href="' . esc_url( get_theme_mod( 'videoplace-google-plus' ) ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/googleplus.png" /></a></div>'; }
-		if ( esc_attr( get_theme_mod( 'videoplace-youtube' ) ) ) { $html .= '<div class="social-link youtube"><a href="' . esc_url( get_theme_mod( 'videoplace-youtube' ) ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/youtube.png" /></a></div>'; }
-		if ( esc_attr( get_theme_mod( 'videoplace-tumblr' ) ) ) { $html .= '<div class="social-link tumblr"><a href="' . esc_url( get_theme_mod( 'videoplace-tumblr' ) ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/tumblr.png" /></a></div>'; }
-		if ( esc_attr( get_theme_mod( 'videoplace-instagram' ) ) ) { $html .= '<div class="social-link instagram"><a href="' . esc_url( get_theme_mod( 'videoplace-instagram' ) ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/instagram.png" /></a></div>'; }
-		if ( esc_attr( get_theme_mod( 'videoplace-rss-feed' ) ) ) { $html .= '<div class="social-link rss"><a href="' . esc_url( get_theme_mod( 'videoplace-rss-feed' ) ) . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/rss.png" /></a></div>'; } else { $html .= '<div class="social-link rss"><a href="' . get_feed_link('rss') . '" target="_blank"><img src="' . get_template_directory_uri() . '/assets/images/rss.png" /></a></div>'; }
+		if ( esc_attr( get_theme_mod( 'videoplace-facebook' ) ) ) { $html .= '<a href="' . esc_url( get_theme_mod( 'videoplace-facebook' ) ) . '" target="_blank"><span class="fab fa-facebook-f"><span class="screen-reader-text">' . esc_html__( 'Facebook Profile', 'wp-rig' ) . '</span></span></a>'; }
+		if ( esc_attr( get_theme_mod( 'videoplace-twitter' ) ) ) { $html .= '<a href="' . esc_url( get_theme_mod( 'videoplace-twitter' ) ) . '" target="_blank"><span class="fab fa-twitter"><span class="screen-reader-text">' . esc_html__( 'Twitter Profile', 'wp-rig' ) . '</span></span></a>'; }
+		if ( esc_attr( get_theme_mod( 'videoplace-youtube' ) ) ) { $html .= '<a href="' . esc_url( get_theme_mod( 'videoplace-youtube' ) ) . '" target="_blank"><span class="fab fa-youtube"><span class="screen-reader-text">' . esc_html__( 'YouTube Channel', 'wp-rig' ) . '</span></span></a>'; }
+		if ( esc_attr( get_theme_mod( 'videoplace-tumblr' ) ) ) { $html .= '<a href="' . esc_url( get_theme_mod( 'videoplace-tumblr' ) ) . '" target="_blank"><span class="fab fa-tumblr"><span class="screen-reader-text">' . esc_html__( 'Tumblr Blog', 'wp-rig' ) . '</span></span></a>'; }
+		if ( esc_attr( get_theme_mod( 'videoplace-instagram' ) ) ) { $html .= '<a href="' . esc_url( get_theme_mod( 'videoplace-instagram' ) ) . '" target="_blank"><span class="fab fa-instagram"><span class="screen-reader-text">' . esc_html__( 'Facebook Profile', 'wp-rig' ) . '</span></span></a>'; }
+		if ( esc_attr( get_theme_mod( 'videoplace-rss-feed' ) ) ) { $html .= '<a href="' . esc_url( get_theme_mod( 'videoplace-rss-feed' ) ) . '" target="_blank"><span class="fas fa-rss"><span class="screen-reader-text">' . esc_html__( 'RSS Feed', 'wp-rig' ) . '</span></span></a>'; } else { $html .= '<a href="' . get_feed_link( 'rss' ) . '" target="_blank"><span class="fas fa-rss"><span class="screen-reader-text">' . esc_html__( 'RSS Feed', 'wp-rig' ) . '</span></span></a>'; }
 		$html .= '</div>';
 		return $html;
 	}
 
+	/**
+	 * Displays the related posts for a post.
+	 *
+	 * @since 2.0
+	 */
 	public function related_posts() {
 		global $post;
 		$tags = wp_get_post_tags( $post->ID );
@@ -111,9 +122,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<div class="post-details clearfix">
 							<?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
-							<h4 class="post-detail"><?php echo __( 'Posted by ', 'videoplace' ) . get_the_author_link() . __( ' on ', 'videoplace' ) . get_the_date( get_option( 'date_format' ) ); ?></h4>
+							<h4 class="post-detail"><?php echo __( 'Posted by ', 'wp-rig' ) . get_the_author_link() . __( ' on ', 'wp-rig' ) . get_the_date( get_option( 'date_format' ) ); ?></h4>
 						</div>
-						<a href="<?php the_permalink(); ?>" class="button white"><?php _e( 'View More Info', 'videoplace' ); ?></a>
+						<a href="<?php the_permalink(); ?>" class="button white"><?php _e( 'View More Info', 'wp-rig' ); ?></a>
 					</article>
 				<?php endforeach; }
 		}
@@ -121,10 +132,26 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		echo '</section>';
 	}
 
+	/**
+	 * Modifies the read more link text to show nothing.
+	 *
+	 * @since 2.0.
+	 *
+	 * @param string $more      The default more text.
+	 * @return string           The new more text.
+	 */
 	public function excerpt_more( $more ) {
 		return '';
 	}
 
+	/**
+	 * Returns the title of an archive page.
+	 *
+	 * @since 2.0
+	 *
+	 * @param string $title      The current title.
+	 * @return string            The new title.
+	 */
 	public function archive_title( $title ) {
 		if ( is_day() ) {
 			$title = get_the_time( 'F j, Y' );
@@ -139,21 +166,30 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$title = single_cat_title( '', false );
 		}
 		else if ( is_search() ) {
-			$title = __( 'Search results for ', 'videoplace' ) . get_search_query();
+			$title = __( 'Search results for ', 'wp-rig' ) . get_search_query();
 		}
 		else if (is_tag()) {
 			$title = single_tag_title( '', false );
 		}
 		else if (is_author()) {
-			$title = __( 'Videos Posted By: ', 'videoplace' ) . get_the_author();
+			$title = __( 'Videos Posted By: ', 'wp-rig' ) . get_the_author();
 		}
 		else {
 			$page = get_query_var( 'paged' );
-			$title = __( 'Page ', 'videoplace' ) . $page;
+			$title = __( 'Page ', 'wp-rig' ) . $page;
 		}
 		return $title;
 	}
 
+	/**
+	 * Displays the pagination for a page.
+	 *
+	 * @since 2.0
+	 *
+	 * @param WP_Query $custom_wp_query      The current WP_Query object.
+	 * @param string   $before               HTML to output before the pagination.
+	 * @param string   $after                HTML to output after the pagination.
+	 */
 	public function page_navi( $custom_wp_query, $before = '', $after = '' ) {
 		global $wpdb;
 		$request        = $custom_wp_query->request;
@@ -215,6 +251,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		echo '</ul></nav>' . $after;
 	}
 
+	/**
+	 * Loads the light theme styles if the option is selected.
+	 *
+	 * @since 2.0
+	 */
 	public function load_light_styles() {
 		if ( 'light' === get_theme_mod( 'videoplace-color-scheme' ) ) {
 			wp_rig()->print_styles( 'wp-rig-light' );

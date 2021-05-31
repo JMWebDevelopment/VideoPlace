@@ -323,6 +323,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'wp-rig-page'     => [
 				'file'             => 'page.min.css',
 				'preload_callback' => function() {
+					global $template;
 					return 'page.php' === basename( $template ) || is_404();
 				},
 			],

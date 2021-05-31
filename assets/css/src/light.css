@@ -29,16 +29,69 @@ body {
 		color: var(--color-off-black);
 	}
 
-	& .header {
+	& .site-header {
 
-		& .masthead {
+		& .site-title {
+			color: var(--color-off-black);
+		}
 
-			& .site-title {
+		& .site-description {
+			color: var(--color-off-black);
+		}
+
+		& .main-navigation {
+			background-color: var(--color-light-grey);
+
+			& .menu-item {
+				background-color: transparent;
+				border-bottom: 3px solid var(--color-light-grey);
 				color: var(--color-off-black);
-			}
 
-			& .site-description {
-				color: var(--color-off-black);
+				& a {
+					color: var(--color-off-black);
+				}
+
+				&:hover {
+					border-bottom: 3px solid var(--color-off-black);
+
+					& > a {
+						color: var(--color-off-black);
+					}
+				}
+
+				&.current-menu-item {
+					border-bottom: 3px solid var(--color-black);
+
+					& a {
+						color: var(--color-black);
+					}
+				}
+
+				& ul {
+					background-color: var(--color-light-grey);
+
+					& li {
+						background-color: var(--color-light-grey);
+						color: var(--color-off-black);
+
+						&:hover {
+							border-bottom: 0;
+							color: var(--color-dark-grey);
+						}
+
+						& a {
+							color: var(--color-off-black);
+
+							&:hover {
+								color: var(--color-dark-grey);
+							}
+
+							&:after {
+								border-color: var(--color-light-grey) transparent transparent !important;
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -230,7 +283,8 @@ body {
 			}
 		}
 	}
-	& .single {
+
+	&.single {
 
 		& .video-top {
 			border-color: var(--color-off-black);
@@ -558,7 +612,7 @@ body {
 		}
 	}
 
-	& .sidebar {
+	& .primary-sidebar {
 
 		& .widget {
 			color: var(--color-off-black);
@@ -572,7 +626,7 @@ body {
 				color: var(--color-off-black);
 			}
 
-			& .widgettitle {
+			& .widget-title {
 				color: var(--color-off-black);
 				border-color: var(--color-off-black);
 			}
@@ -677,6 +731,24 @@ body {
 					}
 				}
 			}
+		}
+	}
+
+	& .site-footer {
+		& p,
+		& h1,
+		& h2,
+		& h3,
+		& h4,
+		& h5,
+		& h6 {
+			color: var(--color-white);
+		}
+
+		& a,
+		& a:link,
+		& a:visited {
+			color: var(--color-off-white);
 		}
 	}
 }
