@@ -9,6 +9,8 @@ namespace WP_Rig\WP_Rig;
 
 use WP_Query;
 
+global $do_not_duplicate;
+
 if ( 1 === esc_attr( get_theme_mod( 'videoplace-show-sticky-post' ) ) ) {
 	$top_post_args = [
 		'posts_per_page' => 1,

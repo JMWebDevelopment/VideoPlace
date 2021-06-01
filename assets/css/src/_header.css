@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 .site-header {
-	padding-bottom: 1em;
+	padding: 1em 0;
 }
 
 .header-image {
@@ -13,6 +13,7 @@
 .header-image img {
 	display: block;
 	margin: 0 auto;
+	max-width: 1000px;
 }
 
 .custom-logo-link {

@@ -9,6 +9,8 @@ namespace WP_Rig\WP_Rig;
 
 use WP_Query;
 
+global $do_not_duplicate;
+
 $home_args  = [
 	'posts_per_page' => get_option( 'post_per_page' ),
 	'paged'          => $args['paged'],

@@ -95,6 +95,15 @@ body {
 			}
 		}
 
+		& .nav--toggle-small .menu-toggle {
+			color: var(--color-black);
+
+			&:hover,
+			&:focus {
+				color: var(--color-off-black);
+			}
+		}
+
 		& .top-bar {
 			background-color: var(--color-light-grey);
 
