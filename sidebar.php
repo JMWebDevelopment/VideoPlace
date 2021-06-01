@@ -1,31 +1,34 @@
 <?php
 /**
- * Sidebar.php
+ * The sidebar containing the main widget area
  *
- * @package VideoPlace
- * @author  Jacob Martella
- * @version  1.3
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp_rig
  */
-?>
-<div id="sidebar1" class="sidebar large-4 medium-12 small-12 columns" role="complementary">
 
+namespace WP_Rig\WP_Rig;
+
+if ( ! wp_rig()->is_primary_sidebar_active() ) {
+	return;
+}
+
+?>
+<aside id="secondary" class="primary-sidebar widget-area">
 	<?php
-	if (is_author()) { ?>
+	if ( is_author() ) {
+		?>
 		<aside id="author-bio1" class="widget author-bio">
 			<?php the_post(); ?>
-			<div class="mugshot"><?php echo get_avatar(get_the_author_meta( 'ID' ), $size = 100); ?></div>
-			<h4 class="author-name"><?php echo __( 'About ', 'videoplace' ) . get_the_author_meta( 'display_name' ); ?></h4>
+			<div class="mugshot"><?php echo get_avatar( get_the_author_meta( 'ID' ), $size = 100 ); ?></div>
+			<h4 class="author-name"><?php echo esc_html__( 'About ', 'wp-rig' ) . get_the_author_meta( 'display_name' ); ?></h4>
 			<p class="bio"><?php echo get_the_author_meta( 'description' ); ?></p>
-			<a href="mailto:<?php echo get_the_author_meta( 'email' ); ?>" target="_blank" class="button white"><?php _e( 'Message Me', 'videoplace' ) ?></a>
+			<a href="mailto:<?php echo esc_attr( get_the_author_meta( 'email' ) ); ?>" target="_blank" class="button white"><?php esc_html_e( 'Message Me', 'wp-rig' ); ?></a>
 			<?php rewind_posts(); ?>
 		</aside>
-	<?php }
+		<?php
+	}
 	?>
 
-	<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
-
-		<?php dynamic_sidebar( 'sidebar1' ); ?>
-
-	<?php endif; ?>
-
-</div>
+	<?php wp_rig()->display_primary_sidebar(); ?>
+</aside><!-- #secondary -->

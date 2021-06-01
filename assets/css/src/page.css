@@ -1,0 +1,163 @@
+@import "_custom-properties.css";
+@import "_custom_mixins.css";
+
+@media (--small-up) {
+
+	.page,
+	.error404 {
+
+		& .page-container {
+			display: flex;
+			flex-wrap: wrap;
+			max-width: 75rem;
+			width: 100%;
+			margin: 0 auto;
+
+			& .site-main {
+				width: 66.67%;
+				padding: 0 0.9375rem 0 0;
+			}
+
+			& .primary-sidebar {
+				width: 33.33%;
+				padding: 0 0 0 0.9375rem;
+			}
+		}
+	}
+
+	.page-post {
+
+		& .article-header {
+			padding-bottom: 15px;
+			border-bottom: 1px solid var(--color-white);
+			margin-bottom: 15px;
+			position: relative;
+
+			& .flex-video {
+				padding-bottom: 56%;
+				margin: 0;
+			}
+
+			& .videoplace-featured-image {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+
+		& .entry-content {
+			background-color: rgba(var(--color-grey), 0.3);
+			padding: 10px 15px;
+			margin-bottom: 15px;
+
+			& .page-title {
+				@mixin robotoSlab 35px, 400, var(--color-white), none;
+				text-align: center;
+			}
+
+			& .flex-video {
+				display: none;
+			}
+		}
+
+		& .flex-video {
+			padding-bottom: 56%;
+			margin: 0;
+		}
+
+		& blockquote {
+			border-left: 2px solid var(--color-white);
+			padding-bottom: 0.5625rem;
+
+			& p {
+				color: var(--color-grey);
+			}
+		}
+
+		& cite {
+			color: var(--color-grey);
+		}
+
+		& tbody,
+		& thead {
+			border: 0;
+		}
+
+		& pre {
+			color: var(--color-off-black);
+			border: 0;
+		}
+	}
+
+	.content-not-found {
+		background-color: rgba($grey, 0.3);
+		padding: 10px 15px;
+
+		& h1 {
+			@mixin roboto 150px, 300, var(--color-white), uppercase;
+			margin-bottom: 15px;
+		}
+
+		& h3 {
+		  	@mixin robotoSlab 40px, 400, var(--color-white), none;
+		}
+
+		& p {
+		  	@mixin playfair 18px, 400, var(--color-white), none;
+		}
+	}
+}
+@media (--small-only) {  }
+@media (--small-down) {  }
+
+@media (--medium-up) {  }
+@media (--medium-only) {  }
+@media (--medium-down) {
+
+	.page,
+	.error404 {
+
+		& .page-container {
+
+			& .site-main {
+				width: 100%;
+			}
+
+			& .primary-sidebar {
+				width: 100%;
+			}
+		}
+	}
+
+	.content-not-found {
+		background-color: rgba($grey, 0.3);
+		padding: 10px 15px;
+
+		& h1 {
+			font-size: 35px;
+			margin-bottom: 15px;
+		}
+
+		& h3 {
+			font-size: 24px;
+		}
+	}
+}
+
+@media (--large-up) {  }
+@media (--large-only) {  }
+@media (--large-down) {  }
+
+@media (--xlarge-up) {  }
+@media (--xlarge-only) {  }
+@media (--xlarge-down) {  }
+
+@media (--xxlarge-up) {  }
+@media (--xxlarge-only) {  }
+@media (--xxlarge-down) {  }

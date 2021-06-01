@@ -1,0 +1,127 @@
+@import "_custom-properties.css";
+@import "_custom_mixins.css";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+/* stylelint-disable */
+html {
+	box-sizing: border-box;
+}
+/* stylelint-enable */
+
+/**
+ * Inherit box-sizing to make it easier to change the property for
+ * components that leverage other behavior; see
+ * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/* stylelint-disable */
+body {
+	background: var(--color-off-black);
+	/* Fallback for when there is no custom background color defined. */
+}
+/* stylelint-enable */
+
+/* stylelint-disable */
+hr {
+	background-color: #efefef;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+/* stylelint-enable */
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* stylelint-disable */
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+/* stylelint-enable */
+
+/* Extra wide images within figure tags don't overflow the content area. */
+figure {
+	margin: 0.5em 0;
+}
+
+table {
+	margin: 0 0 4rem;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	border: 1px solid #000000;
+
+	& thead {
+
+		& tr {
+
+			& th {
+				text-align: left;
+				background-color: #252525;
+				color: #ffffff;
+				font-family: 'Lato', sans-serif;
+				font-weight: 300;
+				padding: 2px 0;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	& tbody {
+
+		& tr {
+			border-top: 1px solid #000000;
+			background-color: #999999;
+
+			& td {
+				text-align: left;
+
+				& a {
+					color: #ffffff !important;
+				}
+			}
+
+			&:nth-child(even) {
+				background-color: #666666;
+			}
+		}
+	}
+}
+
+.sticky {
+
+}
