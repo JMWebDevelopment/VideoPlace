@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.2
+- Fixed JavaScript issue in the flex-video file.
+
 ## 2.0.1
 - Fixed the theme description to be the actual description.
 

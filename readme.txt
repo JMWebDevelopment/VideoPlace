@@ -82,6 +82,9 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at me@jacobmartella.com or fill out the form on the theme page (https://jacobmartella.com/wordpress/wordpress-themes/videoplace-wordpress-theme).
 
 == Changelog ==
+= 2.0.2 =
+- Fixed JavaScript issue in the flex-video file.
+
 = 2.0.1 =
 - Fixed the theme description to be the actual description.
 
