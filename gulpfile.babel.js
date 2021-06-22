@@ -34,7 +34,7 @@ export default firstRun;
  * Build theme for development without BrowserSync or watching
  */
 export const buildDev = parallel(
-    php, images, series( styles, editorStyles ), scripts, translate
+    php, images, series( styles, editorStyles ), scripts, webfonts, translate
 );
 
 /**
