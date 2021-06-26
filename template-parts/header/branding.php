@@ -16,7 +16,6 @@ if ( has_header_image() ) {
 ?>
 
 <div class="site-branding">
-	<?php the_custom_logo(); ?>
 
 	<?php
 	if ( is_front_page() && is_home() ) {

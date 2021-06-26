@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.3
+- Fixed a styling issue with the post header for the single post template.
+- Made sure the Font Awesome icons are displaying.
+- Removed the custom site logo from the header and centered it in the footer.
+
 ## 2.0.2
 - Fixed JavaScript issue in the flex-video file.
 
