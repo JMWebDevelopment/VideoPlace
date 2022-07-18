@@ -32,12 +32,14 @@
 			position: relative;
 			flex-basis: 66.7%;
 
-			& .videoplace-featured-image {
+			& .videoplace-featured-image,
+			& video {
 				position: absolute;
 				top: 0;
 				bottom: 0;
 				right: 0;
 				left: 0;
+				max-width: 100%;
 
 				&:hover {
 					cursor: pointer;

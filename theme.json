@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "settings": {
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Playfair Display\", serif",
+          "slug": "playfair-display",
+          "name": "Playfair Display",
+          "fontFace": [
+            {
+              "fontFamily": "Playfair Display",
+              "fontWeight": "400 700",
+              "fontStyle": "normal",
+              "src": [ "file:./assets/webfonts/PlayfairDisplay-VariableFont_wght.ttf" ]
+            },
+            {
+              "fontFamily": "Playfair Display",
+              "fontWeight": "400 700",
+              "fontStyle": "italic",
+              "src": [ "file:./assets/webfonts/PlayfairDisplay-Italic-VariableFont_wght.ttf" ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"Roboto\", sans-serif",
+          "slug": "roboto",
+          "name": "Roboto",
+          "fontFace": [
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "src": [ "file:./assets/webfonts/Roboto-Regular.ttf" ]
+            },
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "700",
+              "fontStyle": "normal",
+              "src": [ "file:./assets/webfonts/Roboto-Bold.ttf" ]
+            },
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "src": [ "file:./assets/webfonts/Roboto-Italic.ttf" ]
+            },
+            {
+              "fontFamily": "Roboto",
+              "fontWeight": "700",
+              "fontStyle": "italc",
+              "src": [ "file:./assets/webfonts/Roboto-BoldItalic.ttf" ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"Roboto Slab\", serif",
+          "slug": "roboto-slab",
+          "name": "Roboto Slab",
+          "fontFace": [
+            {
+              "fontFamily": "Roboto Slab",
+              "fontWeight": "400 700",
+              "fontStyle": "normal",
+              "src": [ "file:./assets/webfonts/RobotoSlab-VariableFont_wght.ttf" ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
