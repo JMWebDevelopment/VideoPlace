@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.4
+- Added in the fonts to include locally.
+
 ## 2.0.3
 - Fixed a styling issue with the post header for the single post template.
 - Made sure the Font Awesome icons are displaying.
