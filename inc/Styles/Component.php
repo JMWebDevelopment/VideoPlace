@@ -185,7 +185,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		// Enqueue block editor stylesheet.
-		add_editor_style( 'assets/css/editor/editor-styles.min.css' );
+		add_editor_style( './assets/css/editor/editor-styles.min.css' );
 	}
 
 	/**

@@ -50,6 +50,7 @@ export function editorStylesAfterReplacementStream() {
 	const config = getThemeConfig();
 
 	const postcssPlugins = [
+		require('postcss-mixins'),
 		stylelint(),
 		postcssPresetEnv( {
 			importFrom: (
@@ -86,7 +87,6 @@ export function editorStylesAfterReplacementStream() {
 		calc( {
 			preserve: false,
 		} ),
-		cssnano(),
 	];
 
 	// Skip minifying files if we aren't building for
