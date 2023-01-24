@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.0.4
+- Added in the fonts to include locally.
+
+## 2.0.3
+- Fixed a styling issue with the post header for the single post template.
+- Made sure the Font Awesome icons are displaying.
+- Removed the custom site logo from the header and centered it in the footer.
+
+## 2.0.2
+- Fixed JavaScript issue in the flex-video file.
+
+## 2.0.1
+- Fixed the theme description to be the actual description.
+
 ## 2.0
 - Redeveloped the theme using WP Rig as a starter theme.
 - Tested with WordPress 5.7.2.

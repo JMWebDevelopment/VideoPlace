@@ -185,7 +185,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		// Enqueue block editor stylesheet.
-		add_editor_style( 'assets/css/editor/editor-styles.min.css' );
+		add_editor_style( './assets/css/editor/editor-styles.min.css' );
 	}
 
 	/**
@@ -380,9 +380,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$google_fonts = [
-			'Roboto'           => [ '400', '400i', '700', '700i' ],
-			'Roboto Slab'      => [ '400', '400i', '700', '700i' ],
-			'Playfair Display' => [ '400', '400i', '700', '700i' ],
+
 		];
 
 		/**

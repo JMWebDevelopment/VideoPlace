@@ -32,12 +32,14 @@
 			position: relative;
 			flex-basis: 66.7%;
 
-			& .videoplace-featured-image {
+			& .videoplace-featured-image,
+			& video {
 				position: absolute;
 				top: 0;
 				bottom: 0;
 				right: 0;
 				left: 0;
+				max-width: 100%;
 
 				&:hover {
 					cursor: pointer;
@@ -53,6 +55,7 @@
 		& .article-details {
 			padding: 0 0 0 0.9375rem;
 			flex-basis: 33.3%;
+			max-width: 33.3%;
 
 			& .article-header {
 				background-color: rgba(var(--color-grey-rgb), 0.3);
@@ -254,6 +257,7 @@
 		& .article-details {
 			padding-right: 0.625rem;
 			flex-basis: 100%;
+			max-width: 100%;
 
 			& .article-header {
 				min-height: initial;
@@ -308,6 +312,7 @@
 		& .article-details {
 			padding-right: 0.9375rem;
 			flex-basis: 100%;
+			max-width: 100%;
 		}
 	}
 

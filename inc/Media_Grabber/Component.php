@@ -72,7 +72,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		wp_enqueue_script(
 			'wp-rig-flex-video',
 			get_theme_file_uri( '/assets/js/flex-video.min.js' ),
-			[],
+			[ 'jquery' ],
 			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/flex-video.min.js' ) ),
 			false
 		);

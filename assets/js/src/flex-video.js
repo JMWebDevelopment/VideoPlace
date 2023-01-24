@@ -1,4 +1,4 @@
-jQuery( document ).ready( function() {
+jQuery( document ).ready( function( $ ) {
 	// Adds Flex Video to YouTube and Vimeo Embeds
-	jQuery( 'iframe[src*="youtube.com"], iframe[src*="vimeo.com"]' ).wrap( "<div class='flex-video'/>" );
+	$( 'iframe[src*="youtube.com"], iframe[src*="vimeo.com"]' ).wrap( "<div class='flex-video'/>" );
 } );

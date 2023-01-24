@@ -4,7 +4,7 @@ Tags: black, dark, two-columns, right-sidebar, responsive-layout, fluid-layout, 
 Requires at least: 4.8
 Tested up to: 5.7.2
 Requires PHP: 7.0
-Stable tag: 2.0
+Stable tag: 2.0.4
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -82,6 +82,20 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at me@jacobmartella.com or fill out the form on the theme page (https://jacobmartella.com/wordpress/wordpress-themes/videoplace-wordpress-theme).
 
 == Changelog ==
+= 2.0.4 =
+- Added in the fonts to include locally.
+
+= 2.0.3 =
+- Fixed a styling issue with the post header for the single post template.
+- Made sure the Font Awesome icons are displaying.
+- Removed the custom site logo from the header and centered it in the footer.
+
+= 2.0.2 =
+- Fixed JavaScript issue in the flex-video file.
+
+= 2.0.1 =
+- Fixed the theme description to be the actual description.
+
 = 2.0 =
 - Redeveloped the theme using WP Rig as a starter theme.
 - Tested with WordPress 5.7.2.

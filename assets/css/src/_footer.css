@@ -32,7 +32,7 @@
 			& img {
 				width: 40%;
 				height: auto;
-				margin-bottom: 10px;
+				margin: 0 auto 10px;
 			}
 			& p {
 				@mixin roboto 24px, var(--color-white), 400, none;
