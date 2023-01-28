@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1
+- Added a theme.json file to make the editor experience better.
+
 ## 2.0.4
 - Added in the fonts to include locally.
 

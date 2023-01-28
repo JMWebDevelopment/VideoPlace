@@ -2,9 +2,9 @@
 Contributors: Jacob Martella
 Tags: black, dark, two-columns, right-sidebar, responsive-layout, fluid-layout, custom-background, custom-header, editor-style, featured-images, sticky-posts, theme-options, translation-ready, threaded-comments
 Requires at least: 4.8
-Tested up to: 5.7.2
+Tested up to: 6.1.1
 Requires PHP: 7.0
-Stable tag: 2.0.4
+Stable tag: 2.1
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -82,6 +82,9 @@ When customizing a theme, the best practice is to create a child theme. This way
 If you have a question, need to report a bug to be fixed or have a feature request for a future version, email me at me@jacobmartella.com or fill out the form on the theme page (https://jacobmartella.com/wordpress/wordpress-themes/videoplace-wordpress-theme).
 
 == Changelog ==
+= 2.1 =
+- Added a theme.json file to make the editor experience better.
+
 = 2.0.4 =
 - Added in the fonts to include locally.
 
