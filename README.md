@@ -2,9 +2,9 @@
 Contributors: Jacob Martella
 Tags: black, dark, two-columns, right-sidebar, responsive-layout, fluid-layout, custom-background, custom-header, editor-style, featured-images, sticky-posts, theme-options, translation-ready, threaded-comments
 Requires at least: 4.8
-Tested up to: 5.7.2
+Tested up to: 6.1.1
 Requires PHP: 7.0
-Stable tag: 2.0.4
+Stable tag: 2.1
 License: GNU General Public License v3.0 (or later)
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
